@@ -21,13 +21,7 @@ public class SystemTest extends LinearOpMode {
     public static double intakepower = 0;
     public static double kickerpos = 0.5;
     public static double turretpos = 0.5;
-<<<<<<< HEAD
     public static double spindexerPos = 0;
-=======
-    public static double spindexerPower = 0;
-    public static double spindexerpos = 0.5;
-
->>>>>>> 2157123c9dc44f9566b69030ce82e502f67b6baa
     @Override
     public void runOpMode() throws InterruptedException {
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
@@ -36,14 +30,9 @@ public class SystemTest extends LinearOpMode {
         Servo kicker2 = hardwareMap.servo.get("kicker2");
         Servo turret1 = hardwareMap.servo.get("turret1");
         Servo turret2 = hardwareMap.servo.get("turret2");
-<<<<<<< HEAD
         Servo spin1 = hardwareMap.servo.get("spin1");
         Servo spin2 = hardwareMap.servo.get("spin2");
-=======
-        Servo spindexer1 = hardwareMap.servo.get("spindexer1");
-        Servo spindexer2 = hardwareMap.servo.get("spindexer2");
 
->>>>>>> 2157123c9dc44f9566b69030ce82e502f67b6baa
         DcMotorEx outtakeMotor1 = (DcMotorEx) hardwareMap.dcMotor.get("shooter1");
         DcMotorEx outtakeMotor2 = (DcMotorEx) hardwareMap.dcMotor.get("shooter2");
         DcMotor backleft = hardwareMap.dcMotor.get("backleft");
@@ -51,10 +40,6 @@ public class SystemTest extends LinearOpMode {
         DcMotor frontleft = hardwareMap.dcMotor.get("frontleft");
         DcMotor frontright = hardwareMap.dcMotor.get("frontright");
         DcMotor intake = hardwareMap.dcMotor.get("intake");
-<<<<<<< HEAD
-=======
-        //DcMotor spindexer = hardwareMap.dcMotor.get("spindexer");
->>>>>>> 2157123c9dc44f9566b69030ce82e502f67b6baa
         waitForStart();
 
         while (opModeIsActive()){
@@ -69,15 +54,8 @@ public class SystemTest extends LinearOpMode {
             kicker2.setPosition(1-kickerpos);
             turret1.setPosition(turretpos);
             turret2.setPosition(turretpos);
-<<<<<<< HEAD
             spin1.setPosition(spindexerPos);
             spin2.setPosition(spindexerPos);
-=======
-            //spindexer.setPower(spindexerPower);
-            spindexer1.setPosition(spindexerpos);
-            spindexer2.setPosition(spindexerpos);
->>>>>>> 2157123c9dc44f9566b69030ce82e502f67b6baa
-
 
             telemetry.addData("outtakeMotor1 pos", outtakeMotor1.getCurrentPosition());
 
