@@ -21,12 +21,7 @@ public class SystemTest extends LinearOpMode {
     public static double intakepower = 0;
     public static double kickerpos = 0.5;
     public static double turretpos = 0.5;
-    public static double spindexerPower = 0;
-
-
-    public static double PTOLEFT = 0.7;
-    public static double PTORIGHT = 0.1;
-
+    public static double spindexerPos = 0;
     @Override
     public void runOpMode() throws InterruptedException {
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
@@ -35,7 +30,8 @@ public class SystemTest extends LinearOpMode {
         Servo kicker2 = hardwareMap.servo.get("kicker2");
         Servo turret1 = hardwareMap.servo.get("turret1");
         Servo turret2 = hardwareMap.servo.get("turret2");
-
+        Servo spin1 = hardwareMap.servo.get("spin1");
+        Servo spin2 = hardwareMap.servo.get("spin2");
         DcMotorEx outtakeMotor1 = (DcMotorEx) hardwareMap.dcMotor.get("shooter1");
         DcMotorEx outtakeMotor2 = (DcMotorEx) hardwareMap.dcMotor.get("shooter2");
         DcMotor backleft = hardwareMap.dcMotor.get("backleft");
@@ -43,7 +39,6 @@ public class SystemTest extends LinearOpMode {
         DcMotor frontleft = hardwareMap.dcMotor.get("frontleft");
         DcMotor frontright = hardwareMap.dcMotor.get("frontright");
         DcMotor intake = hardwareMap.dcMotor.get("intake");
-        DcMotor spindexer = hardwareMap.dcMotor.get("spindexer");
         waitForStart();
 
         while (opModeIsActive()){
@@ -58,7 +53,9 @@ public class SystemTest extends LinearOpMode {
             kicker2.setPosition(1-kickerpos);
             turret1.setPosition(turretpos);
             turret2.setPosition(turretpos);
-            spindexer.setPower(spindexerPower);
+            spin1.setPosition(spindexerPos);
+            spin2.setPosition(spindexerPos);
+
 
             telemetry.addData("outtakeMotor1 pos", outtakeMotor1.getCurrentPosition());
 
